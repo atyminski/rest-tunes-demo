@@ -1,0 +1,9 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "D:\\Projekty\\rest-tunes\\Gevlee.RestTunes\\db.sqlite",
+            "dialect": "SQLite",
+            "name": "localdb"
+        }
+    ]
+}
