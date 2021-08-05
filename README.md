@@ -2,7 +2,8 @@
 
 Docker command:
 ```
-docker run -it -p 57111:80 registry.gitlab.com/gevleeog/rest-tunes
+docker build -t rest-tunes .
+docker run -it -p 57111:80 rest-tunes
 ```
 
 Swagger:
