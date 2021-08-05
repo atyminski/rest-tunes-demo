@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gevlee.RestTunes.Controllers
 {
-    [Route("api/v{version:apiVersion}/albums")]
+    [Route("v{version:apiVersion}/albums")]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
@@ -24,7 +24,7 @@ namespace Gevlee.RestTunes.Controllers
             _urlHelper = urlHelper;
         }
 
-        [HttpGet("/api/v{version:apiVersion}/artists/{artistId}/albums", Name = "GetArtistAlbums")]
+        [HttpGet("/v{version:apiVersion}/artists/{artistId}/albums", Name = "GetArtistAlbums")]
         [HttpGet(Name = "GetAlbums")]
         [ResponseCache(Duration = 10)]
         [ProducesResponseType(typeof(CollectionResult<AlbumResult>), 200)]

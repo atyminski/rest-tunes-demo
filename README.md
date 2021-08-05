@@ -14,7 +14,7 @@ http://localhost:57111/swagger/v1/swagger.json
 
 # Endpoints
 
-### api/v{version:apiVersion}/playlists
+### v{version:apiVersion}/playlists
 
 #### GET
 ##### Parameters
@@ -46,7 +46,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | 400 | Bad Request | [ [ValidationErrorResult](#validationerrorresult) ] |
 | 404 | Not Found |  |
 
-### api/v{version:apiVersion}/albums/{albumId}/tracks
+### v{version:apiVersion}/albums/{albumId}/tracks
 
 #### GET
 ##### Parameters
@@ -64,7 +64,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [CollectionResult[TrackResult]](#collectionresult[trackresult]) |
 
-### api/v{version:apiVersion}/albums/{id}
+### v{version:apiVersion}/albums/{id}
 
 #### GET
 ##### Parameters
@@ -79,7 +79,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [AlbumResult](#albumresult) |
 
-### api/v{version:apiVersion}/playlists/{playlistId}/tracks
+### v{version:apiVersion}/playlists/{playlistId}/tracks
 
 #### GET
 ##### Parameters
@@ -129,7 +129,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | 200 | Success |
 | 404 | Not Found |
 
-### api/v{version:apiVersion}/playlists/{playlistId}
+### v{version:apiVersion}/playlists/{playlistId}
 
 #### PUT
 ##### Parameters
@@ -161,7 +161,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | 200 | Success |
 | 404 | Not Found |
 
-### api/v{version:apiVersion}/albums
+### v{version:apiVersion}/albums
 
 #### GET
 ##### Parameters
@@ -179,7 +179,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [CollectionResult[AlbumResult]](#collectionresult[albumresult]) |
 
-### api/v{version:apiVersion}/export
+### v{version:apiVersion}/export
 
 #### GET
 ##### Parameters
@@ -193,7 +193,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [ [ArtistExportResult](#artistexportresult) ] |
 
-### api/v{version:apiVersion}/tracks/{id}
+### v{version:apiVersion}/tracks/{id}
 
 #### GET
 ##### Parameters
@@ -209,7 +209,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | 200 | Success | [TrackResult](#trackresult) |
 | 404 | Not Found |  |
 
-### api/v{version:apiVersion}/tracks
+### v{version:apiVersion}/tracks
 
 #### GET
 ##### Parameters
@@ -227,7 +227,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [CollectionResult[TrackResult]](#collectionresult[trackresult]) |
 
-### api/v{version:apiVersion}/artists
+### v{version:apiVersion}/artists
 
 #### GET
 ##### Parameters
@@ -244,7 +244,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [CollectionResult[ArtistResult]](#collectionresult[artistresult]) |
 
-### api/v{version:apiVersion}/artists/{artistId}/albums
+### v{version:apiVersion}/artists/{artistId}/albums
 
 #### GET
 ##### Parameters
@@ -262,7 +262,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | ---- | ----------- | ------ |
 | 200 | Success | [CollectionResult[AlbumResult]](#collectionresult[albumresult]) |
 
-### api/v{version:apiVersion}/artists/{id}
+### v{version:apiVersion}/artists/{id}
 
 #### GET
 ##### Parameters
@@ -278,7 +278,7 @@ http://localhost:57111/swagger/v1/swagger.json
 | 200 | Success | [ArtistResult](#artistresult) |
 | 404 | Not Found |  |
 
-### api/v{version:apiVersion}/playlists/{id}
+### v{version:apiVersion}/playlists/{id}
 
 #### GET
 ##### Parameters

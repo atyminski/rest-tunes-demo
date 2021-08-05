@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gevlee.RestTunes.Controllers
 {
-    [Route("api/v{version:apiVersion}/tracks")]
+    [Route("v{version:apiVersion}/tracks")]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
@@ -24,7 +24,7 @@ namespace Gevlee.RestTunes.Controllers
             _urlHelper = urlHelper;
         }
 
-        [HttpGet("/api/v{version:apiVersion}/albums/{albumId}/tracks", Name = "GetAlbumTracks")]
+        [HttpGet("/v{version:apiVersion}/albums/{albumId}/tracks", Name = "GetAlbumTracks")]
         [HttpGet(Name = "GetTracks")]
         [ProducesResponseType(typeof(CollectionResult<TrackResult>), 200)]
         public ActionResult<CollectionResult<TrackResult>> GetTracks(int? albumId,
@@ -114,9 +114,9 @@ namespace Gevlee.RestTunes.Controllers
 
         [MapToApiVersion("2.0")]
         [HttpGet("{id}", Name = "GetTrack")]
-        [ProducesResponseType(typeof(TrackResult), 200)]
+        [ProducesResponseType(typeof(TrackResultV2), 200)]
         [ProducesResponseType(404)]
-        public async Task<ActionResult<TrackResult>> GetTrackV2(long id)
+        public async Task<ActionResult<TrackResultV2>> GetTrackV2(long id)
         {
             var track = await _context.Tracks.FindAsync(id);
 
@@ -125,8 +125,18 @@ namespace Gevlee.RestTunes.Controllers
                 return NotFound();
             }
 
-            var result = CreateTrackResult(track);
+            var result = CreateTrackResultV2(track);
             result.Duration = null;
+            return result;
+        }
+
+        private TrackResultV2 CreateTrackResultV2(Track x)
+        {
+            var result = TrackResultV2.FromEntity(x);
+            result.Links.Add(new Link("self", _urlHelper.Link("GetTrack", new { id = x.TrackId })));
+            result.Links.Add(new Link("album", _urlHelper.Link("GetAlbum", new { id = x.AlbumId })));
+            result.Links.Add(new Link("artist",
+                _urlHelper.Link("GetArtist", new { id = _context.Albums.Find(x.AlbumId).ArtistId })));
             return result;
         }
 

@@ -47,6 +47,12 @@ namespace Gevlee.RestTunes
             {
                 options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ApiVersionReader = new UrlSegmentApiVersionReader();
+                /*
+                 *  UrlSegmentApiVersionReader – Enable Url Versioning
+                    HeaderApiVersionReader – Enable Header Versioning
+                    QueryStringApiVersionReader – Enable Query String Versioning
+                    MediaTypeApiVersionReader – Enable Mediatype Versioning
+                 */
                 options.AssumeDefaultVersionWhenUnspecified = true;
                 options.ApiVersionSelector = new LowestImplementedApiVersionSelector(options);
                 options.ReportApiVersions = true;

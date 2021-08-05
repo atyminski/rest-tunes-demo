@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gevlee.RestTunes.Controllers
 {
-    [Route("api/v{version:apiVersion}/playlists")]
+    [Route("v{version:apiVersion}/playlists")]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]

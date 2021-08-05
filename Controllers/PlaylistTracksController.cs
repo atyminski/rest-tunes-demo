@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Gevlee.RestTunes.Controllers
 {
-    [Route("api/v{version:apiVersion}/playlists/{playlistId}/tracks")]
+    [Route("v{version:apiVersion}/playlists/{playlistId}/tracks")]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
